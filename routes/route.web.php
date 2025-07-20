@@ -21,11 +21,22 @@ $routes = [
         'middlewares'=>['auth']
     ],
 
-        '/create' => [
+        '/voircompte' => [
          'controller' => UserController::class,
-        'action' => 'create'
+        'action' => 'voircompte'
+     ],
+
+
+         '/register' => [
+         'controller' => SecurityController::class,
+        'action' => 'register'
      ],
     
+
+             '/ajouter-compte' => [
+         'controller' => UserController::class,
+        'action' => 'ajoutercompte'
+     ],
 ];
 
 

@@ -43,6 +43,12 @@ class SecurityController extends AbstractController
 
     }
 
+    public function register ()
+    {
+    $this->renderHTML("auth/create.html");
+
+    }
+
 
    
 }

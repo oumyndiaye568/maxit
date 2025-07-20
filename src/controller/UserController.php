@@ -2,6 +2,7 @@
 namespace App\Controller;
 use App\Core\Abstract\AbstractController;
 use App\Service\CompteService;
+use App\Service\ListeTransactionService;
 
 
 class UserController extends AbstractController
@@ -20,6 +21,7 @@ class UserController extends AbstractController
         public function showDashboard()
         { 
              $user=$this->session->get("user");
+             
              if (!$user) 
              {
                 header("Location: /");
@@ -37,12 +39,25 @@ class UserController extends AbstractController
                 'name'=>$name,
                 'prenon'=>$prenom
             ]);
+            
+
+
+
 
         }
-        public function create (){
-         $this->renderHTML("auth/create.html");
+        public function voircompte (){
+         $this->renderHTML("auth/voircompte.html");
 
     }
+
+    public function ajoutercompte ()
+    {
+        $this->renderHTML("auth/ajoutercompte.html");
+
+    }
+
+
+
     }
 
 

@@ -40,7 +40,7 @@
         </header>
 
         <div class="flex">
-           <aside class="w-28 bg-gradient-to-b from-maxitsa-orange via-red-500 to-maxitsa-orange min-h-screen shadow-2xl relative overflow-hidden backdrop-blur-sm border-r border-white/20">
+           <aside class="w-28 bg-gradient-to-b from-maxitsa-orange via-red-500 to-maxitsa-orange-50 min-h-screen  relative overflow-hidden  border-white/20">
             <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10 pointer-events-none"></div>
             <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none"></div>
             

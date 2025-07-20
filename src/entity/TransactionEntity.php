@@ -15,13 +15,13 @@ class TransactionEntity  {
             int $id=0,
             float $montannt="",
             string $date= "",
-            // string $type= ""
+            string $type= ""
             )
         {
             $this->id = $id;
             $this->montant = $montannt;
             $this->date = $date;
-            // $this->type = $type;
+            $this->type = $type;
         }
 
     public function __getId ()
@@ -46,7 +46,7 @@ class TransactionEntity  {
         {
             return $this->type;
         }
-     
+
     public function setId(int $id)   
         {
             $this->id = $id;
@@ -60,6 +60,38 @@ class TransactionEntity  {
     public function setDate (string $date)    
         {
             $this->date=$date;
+        }
+        public function setType (string $type)
+        {
+            $this->type = $type;
+        }
+
+        public function setCompteid (string $compteid)
+        {
+            $this->compteid = $compteid;
+        }
+
+
+        public static  function  toObject ( array $data)
+        {
+            return new static(
+                $data["id"]?? 0,
+                $data["montant"]?? 0,
+                $data ["date"] ?? 0,
+                $data ["type"]?? 0,
+            );
+        }
+
+        public function toArray (object $data)
+        {
+            return [
+                "id"=> $this->getId(),
+                "montant"=> $this->getMontant(),
+                "date"=> $this->getDate(),
+                "type"=> $this->getType(),
+
+            ];
+
         }
 
 }    

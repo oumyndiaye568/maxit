@@ -1,193 +1,98 @@
-<?php $title = 'Mes Comptes'; ?>
 
-<div class="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
-  <?php include __DIR__ . '/../layout/partial/dashboard-header.php'; ?>
-  
-  <main class="flex-1 p-6 md:p-10">
-    <div class="max-w-7xl mx-auto">
-      <!-- Header avec animation -->
-      <div class="flex items-center justify-between mb-8 animate-fade-in">
-        <div class="space-y-2">
-          <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Mes Comptes
-          </h1>
-          <p class="text-gray-600 dark:text-gray-300">Gérez vos comptes bancaires en toute simplicité</p>
-        </div>
+
+    <!-- Formulaire principal avec glassmorphism -->
+    <div class="w-2/3 bg-white flex items-center justify-center p-8 relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-orange-50/30 to-orange-100/20"></div>
         
-        <button class="group relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition-all duration-300 ease-out border-2 border-blue-500 rounded-full hover:bg-blue-500 hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transform hover:scale-105 hover:shadow-lg">
-          <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          <span class="absolute inset-0 w-full h-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          <span class="relative flex items-center gap-2 text-blue-600 group-hover:text-white">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-            Ajouter un compte
-          </span>
-        </button>
-      </div>
+        <div class="w-full max-w-2xl relative z-10">
+            <div class="form-container rounded-2xl shadow-2xl p-8">
+                <h2 class="text-4xl font-light text-gray-800 mb-8 text-center animate-fade-in">
+                    Inscription
+                </h2>
+                
+                <form class="space-y-6">
+                    <!-- Nom et Prénom -->
+                    <div class="grid grid-cols-2 gap-6 form-group">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Nom</label>
+                            <input type="text" placeholder="Entrez votre nom" class="input-field w-full px-4 py-4 rounded-xl text-gray-700 placeholder-gray-400">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Prénom</label>
+                            <input type="text" placeholder="Entrez votre prénom" class="input-field w-full px-4 py-4 rounded-xl text-gray-700 placeholder-gray-400">
+                        </div>
+                    </div>
 
-      <!-- Statistiques rapides -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="flex items-center justify-between">
-            <div>
-              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Total des comptes</p>
-              <p class="text-3xl font-bold text-gray-900 dark:text-white">0</p>
-            </div>
-            <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
-              <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 1v4"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 1v4"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
+                    <!-- Numéro de téléphone -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Numéro de téléphone</label>
+                        <input type="tel" placeholder="Entrez votre numéro de téléphone" class="input-field w-full px-4 py-4 rounded-xl text-gray-700 placeholder-gray-400">
+                    </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="flex items-center justify-between">
-            <div>
-              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Solde total</p>
-              <p class="text-3xl font-bold text-green-600 dark:text-green-400">0 €</p>
-            </div>
-            <div class="p-3 bg-green-100 dark:bg-green-900 rounded-full">
-              <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
+                    <!-- Adresse -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Adresse</label>
+                        <input type="text" placeholder="Entrez votre adresse" class="input-field w-full px-4 py-4 rounded-xl text-gray-700 placeholder-gray-400">
+                    </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="flex items-center justify-between">
-            <div>
-              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Dernière activité</p>
-              <p class="text-3xl font-bold text-gray-900 dark:text-white">--</p>
-            </div>
-            <div class="p-3 bg-purple-100 dark:bg-purple-900 rounded-full">
-              <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
+                    <!-- Numéro Carte d'identité -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Numéro Carte d'identité</label>
+                        <input type="text" placeholder="Entrez votre numéro de carte nationale d'identité" class="input-field w-full px-4 py-4 rounded-xl text-gray-700 placeholder-gray-400">
+                    </div>
 
-      <!-- Section des comptes -->
-      <div class="space-y-6">
-        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Vos comptes</h2>
-        
-        <!-- État vide moderne -->
-        <div class="bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-600 p-12 text-center hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300">
-          <div class="mx-auto w-24 h-24 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-full flex items-center justify-center mb-6">
-            <svg class="w-12 h-12 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-            </svg>
-          </div>
-          
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-            Aucun compte trouvé
-          </h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
-            Vous n'avez pas encore ajouté de compte bancaire. Commencez par en ajouter un pour suivre vos finances.
-          </p>
-          
-          <button class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-            Créer mon premier compte
-          </button>
-        </div>
+                    <!-- Upload de fichiers amélioré -->
+                    <div class="grid grid-cols-2 gap-6 form-group">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Carte d'identité Recto</label>
+                            <div class="file-upload rounded-xl py-8 px-4 text-center cursor-pointer">
+                                <svg class="w-12 h-12 text-orange-400 mx-auto mb-4 icon-hover" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                <p class="text-sm text-gray-600">Cliquez pour télécharger</p>
+                                <p class="text-xs text-gray-400 mt-1">JPG, PNG, PDF (max. 10MB)</p>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Carte d'identité Verso</label>
+                            <div class="file-upload rounded-xl py-8 px-4 text-center cursor-pointer">
+                                <svg class="w-12 h-12 text-orange-400 mx-auto mb-4 icon-hover" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                <p class="text-sm text-gray-600">Cliquez pour télécharger</p>
+                                <p class="text-xs text-gray-400 mt-1">JPG, PNG, PDF (max. 10MB)</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Template de carte de compte (pour référence future) -->
-        <div class="hidden group bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-4">
-              <div class="flex items-center space-x-3">
-                <div class="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Compte Courant</h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">Banque Populaire</p>
-                </div>
-              </div>
-              <div class="text-right">
-                <div class="text-2xl font-bold text-gray-900 dark:text-white">1 234,56 €</div>
-                <div class="text-sm text-green-600 dark:text-green-400 flex items-center justify-end">
-                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17l9.2-9.2M17 17V7H7"></path>
-                  </svg>
-                  +2.3%
-                </div>
-              </div>
+                    <!-- Photo -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Photo de profil</label>
+                        <div class="file-upload rounded-xl py-8 px-4 text-center cursor-pointer">
+                            <svg class="w-12 h-12 text-orange-400 mx-auto mb-4 icon-hover" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <p class="text-sm text-gray-600">Ajoutez votre photo</p>
+                            <p class="text-xs text-gray-400 mt-1">JPG, PNG (max. 5MB)</p>
+                        </div>
+                    </div>
+
+                    <!-- Bouton d'inscription amélioré -->
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary w-full text-white font-semibold py-4 px-6 rounded-xl text-lg relative overflow-hidden">
+                            <span class="relative z-10">Créer mon compte</span>
+                        </button>
+                    </div>
+
+                    <!-- Liens du bas avec animations -->
+                    <div class="flex justify-center items-center space-x-4 text-sm text-gray-500 mt-8 form-group">
+                        <a href="#" class="hover:text-orange-500 transition-colors duration-300 font-medium">Déjà un compte ?</a>
+                        <div class="w-1 h-1 bg-gray-300 rounded-full"></div>
+                        <a href="#" class="hover:text-orange-500 transition-colors duration-300 font-medium">Se connecter</a>
+                    </div>
+                </form>
             </div>
-            
-            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 mb-4">
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                <span class="font-medium">N° de compte:</span> •••• •••• •••• 1234
-              </p>
-            </div>
-            
-            <div class="flex space-x-2">
-              <button class="flex-1 bg-blue-50 dark:bg-blue-900 text-blue-600 dark:text-blue-400 font-medium py-2 px-4 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800 transition-colors duration-200">
-                Voir détails
-              </button>
-              <button class="flex-1 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
-                Historique
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </main>
-</div>
 
-<style>
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out;
-}
-
-/* Effet de glassmorphisme pour les cartes */
-.glass-card {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Animation pour les boutons */
-.btn-animate {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-animate::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn-animate:hover::before {
-  left: 100%;
-}
-</style>
+   

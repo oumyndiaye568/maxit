@@ -6,8 +6,5 @@ $middelewares =
 [
 
     'auth'=>Auth::class
-
-
 ];
-
 return $middelewares;

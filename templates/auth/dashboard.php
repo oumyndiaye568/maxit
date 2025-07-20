@@ -2,7 +2,7 @@
 <div class="mb-6">
     <h2 class="text-2xl font-bold text-gray-800 mb-2">Bonjour <?php echo $name.' '.$prenon ?></h2>
     <p class="text-gray-600">Bienvenue sur votre espace MAXITSA</p>
-    <a href="/create">
+    <a href="/voircompte">
     <div class="text-right text-sm text-gray-500 mt-2 ">
     <button>
        Voir compte

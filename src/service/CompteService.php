@@ -31,4 +31,5 @@ class CompteService
         return $this->CompteRepository->getSolde($idclient);
     }
 
+    
 }
