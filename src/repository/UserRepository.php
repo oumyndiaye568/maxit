@@ -33,6 +33,7 @@ class UserRepository extends AbstractRepository
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':login', $login);
         $stmt->bindParam(':password', $password);
+     
         $stmt->execute();
 
         $array = $stmt->fetchAll(\PDO::FETCH_ASSOC);

@@ -19,7 +19,7 @@ DB_USER={$config['user']}
 DB_PORT={$config['port']}
 DB_DRIVER={$config['driver']}
 
-dns = "{$config['driver']}:host={$config['host']}; dbname={$config['dbname']};port={$config['port']}"
+DSN = "{$config['driver']}:host={$config['host']}; dbname={$config['dbname']};port={$config['port']}"
 
 ENV;
         file_put_contents($envPath, $env);
@@ -96,8 +96,8 @@ try {
         telephone VARCHAR(20) UNIQUE NOT NULL,
         solde DECIMAL(12,2) NOT NULL DEFAULT 0.00,
         type VARCHAR(20) NOT NULL,
-        client_id INT NOT NULL,
-        FOREIGN KEY (client_id) REFERENCES utilisateur(id),
+        user_id INT NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES utilisateur(id),
         CHECK (type IN ('Principal', 'Secondaire'))
 
 
@@ -141,7 +141,7 @@ try {
             telephone VARCHAR(20) UNIQUE NOT NULL,
             solde DECIMAL(12,2) DEFAULT 0.00 NOT NULL,
             type VARCHAR(20) NOT NULL CHECK (type IN ('Principal', 'Secondaire')),
-            client_id INTEGER NOT NULL REFERENCES utilisateur(id)
+            user_id INTEGER NOT NULL REFERENCES utilisateur(id)
 
             );",
          
